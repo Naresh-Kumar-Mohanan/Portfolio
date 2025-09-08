@@ -1,0 +1,31 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 10vh;
+    width: 100vw;
+    font-size: 18px;
+}
+
+nav>img {
+    border-radius: 50%;
+}
+
+nav>ul {
+    display: flex;
+    gap: 10px;
+}
+nav>button{
+    width: 25px;
+    height: 30px;
+    font-size: 35px;
+    background: none;
+}
