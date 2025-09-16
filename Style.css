@@ -1,131 +1,31 @@
 * {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    background-color: #161B33;
 }
 
 nav {
     display: flex;
-    height: 8vh;
-    width: 100vw;
-    gap: 25px;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    font-size: 18px;
+    padding: 25px;
     color: cyan;
-    cursor: pointer;
-    border-radius: 10px;
-    /* box-shadow: 0px 1px 5px cyan; */
-}
-
-nav>img {
-    border-radius: 50%;
-}
-
-nav>ul {
-    display: flex;
-    gap: 10px;
-}
-
-nav>ul>li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-
-nav>ul>li:hover {
-    font-size: 20px;
 }
 
 nav>h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    font-size: 35px;
-    background-color: #161B33;
+    font-size: 38px;
 }
 
-main {
-    height: 600px;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    font-style: italic;
-}
-
-main>.left {
+nav>ol {
     display: flex;
-    flex-direction: column;
     gap: 20px;
-    align-items: center;
-    padding: 40px;
-    border-radius: 25px;
+    list-style: none;
+    font-size: 18px;
 }
 
-main>.left>img {
-    height: 450px;
-    width: 450px;
-    border-bottom: 6px solid cyan;
-    border-radius: 50%;
-    box-shadow: 0px 0px 10px cyan;
-}
-
-main>.left>h1 {
-    color: cyan;
-}
-
-main>.left>h1:hover {
-    color: white;
-    font-size: 30px;
-}
-
-main>.right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: cyan;
-    border-radius: 100px;
-    padding: 60px;
-    gap: 20px;
-    box-shadow: -6px 0px 8px cyan;
-}
-
-main>.right>h1 {
-    height: 50px;
-    width: 100%;
-    font-size: 40px;
-    letter-spacing: 1.2px;
-    word-spacing: 2px;
-    font-weight: bold;
-}
-
-main>.right>p {
-    font-size: 16px;
-    letter-spacing: 1.2px;
-    word-spacing: 1.6px;
-    font-style: italic;
-    text-indent: 40px;
-}
-
-nav>ul>li:hover {
-    color: white;
-}
-
-nav>h1:hover {
-    color: white;
-    font-size: 50px;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-
+nav>button {
+    padding: 10px;
+    border-radius: 10%;
+    background-color: palevioletred;
 }
