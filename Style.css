@@ -4,8 +4,13 @@
     box-sizing: border-box;
 }
 
+
 body {
     background-color: #161b33;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
 
 ::-webkit-scrollbar {
@@ -14,6 +19,7 @@ body {
 
 nav {
     height: 10vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -100,11 +106,13 @@ button:hover {
 
 .main>.right>p {
     width: 85%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     letter-spacing: 1px;
     word-spacing: 1.2px;
     font-size: 16px;
+    text-indent: 20px;
+    text-align: justify;
 }
 
 .btn-Link {
@@ -177,4 +185,32 @@ button:hover {
     background-color: #161b33;
     color: cyan;
     font-weight: bold;
+}
+
+
+.main2 {
+    height: 300px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    align-content: center;
+    margin-top: 30px;
+    text-align: center;
+    border: 1px solid cyan;
+}
+
+.box1 {
+    border: 1px solid cyan;
+}
+
+.box2 {
+    border: 1px solid cyan;
+}
+
+.box3 {
+    border: 1px solid cyan;
+}
+
+.box4 {
+    border: 1px solid cyan;
 }
