@@ -1,0 +1,38 @@
+.desktop-menu {
+    display: flex;
+}
+
+.mobile-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--surface-color);
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu li {
+    margin: 15px 0;
+}
+
+@media (max-width: 1024px) {
+    .desktop-menu {
+        display: none !important;
+    }
+
+    .mobile-icon {
+        display: block !important;
+    }
+}
