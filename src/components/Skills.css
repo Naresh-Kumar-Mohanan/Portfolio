@@ -86,7 +86,14 @@
 .rating-bar-fill {
     height: 100%;
     border-radius: 10px;
-    transition: width 1s ease-out 0.3s;
+    width: 0%;
+    transition: width 1s ease-out;
+}
+
+.skill-card-container:hover .rating-bar-fill {
+    width: var(--target-width);
+    transition-delay: 0.2s;
+    /* Start bar fill after flip starts */
 }
 
 @media (max-width: 480px) {

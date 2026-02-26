@@ -12,6 +12,10 @@
   --font-main: 'Outfit', sans-serif;
   --transition-speed: 0.5s;
   --glow-opacity: 0.2;
+  --primary-glow: rgba(0, 242, 255, 0.3);
+  --primary-glow-strong: rgba(0, 242, 255, 0.5);
+  --glass-hover-shadow: rgba(0, 242, 255, 0.15);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme='light'] {
@@ -24,10 +28,16 @@
   --text-color: #1a1f2e;
   --text-secondary: #475569;
   --header-gradient: linear-gradient(to right, #1a1f2e, #475569);
-  --glass-bg: rgba(255, 255, 255, 0.75);
-  --glass-border: rgba(30, 41, 59, 0.05);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(30, 41, 59, 0.15);
+  /* Stronger border for visibility */
   --blob-opacity: 0.06;
   --glow-opacity: 0.04;
+  --primary-glow: rgba(0, 136, 204, 0.3);
+  /* Matches #0088cc */
+  --primary-glow-strong: rgba(0, 136, 204, 0.5);
+  --glass-hover-shadow: rgba(0, 136, 204, 0.15);
+  --glass-shadow: 0 8px 32px rgba(30, 41, 59, 0.05);
 }
 
 /* Safety fix for cursor visibility */
@@ -125,12 +135,12 @@ ul {
 .btn-primary {
   background: var(--accent-gradient);
   color: white;
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+  box-shadow: 0 0 20px var(--primary-glow);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 30px rgba(0, 242, 255, 0.5);
+  box-shadow: 0 0 30px var(--primary-glow-strong);
 }
 
 .btn-outline {
@@ -141,8 +151,9 @@ ul {
 
 .btn-outline:hover {
   background: var(--primary-color);
-  color: black;
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+  color: white;
+  /* Changed to white for better light theme contrast */
+  box-shadow: 0 0 20px var(--primary-glow);
 }
 
 /* Utility for glassmorphism */
@@ -192,12 +203,13 @@ ul {
   backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
   border-radius: 16px;
+  box-shadow: var(--glass-shadow);
   transition: background var(--transition-speed) ease, border var(--transition-speed) ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass:hover {
   border-color: var(--primary-color);
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.15);
+  box-shadow: 0 0 20px var(--glass-hover-shadow);
   transform: translateY(-5px);
 }
 

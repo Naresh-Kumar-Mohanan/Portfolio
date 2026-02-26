@@ -75,7 +75,7 @@ const Skills = () => {
                                     <div
                                         className="rating-bar-fill"
                                         style={{
-                                            width: `${skill.rating}%`,
+                                            '--target-width': `${skill.rating}%`,
                                             background: skill.color,
                                             boxShadow: `0 0 10px ${skill.color}80`
                                         }}
