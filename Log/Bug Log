@@ -1,0 +1,10 @@
+# Bug Log - 2026-02-26
+
+## Resolved Bugs
+1. **ESLint JSX Detection Issue**:
+   - **Status**: Fixed ✅
+   - **Resolution**: Installed `eslint-plugin-react`, updated `eslint.config.js` with correct plugins and rules, and added `Dump` directory to `globalIgnores`. 
+   - **Verification**: `npm run lint` now passes successfully.
+
+## Open Bugs
+- None identified currently.

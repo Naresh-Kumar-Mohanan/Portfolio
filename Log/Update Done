@@ -1,0 +1,22 @@
+# Update Done - 2026-02-26
+
+1. **Bug Resolution & Quality**:
+   - Resolved all ESLint errors (0 remaining).
+   - Fixed missing imports in `App.jsx` and `About.jsx`.
+   - Optimized project for GitHub Pages deployment.
+2. **Light Mode System**:
+   - Implemented a complete Light/Dark theme system using CSS variables.
+   - **Creative Transition**: Added a "Traveling Sun/Moon" animation that moves from left to right across the screen when toggling.
+   - Persistent theme storage via `localStorage`.
+3. **Creative Design Enhancements**:
+   - **Magnetic Effect**: Added magnetic pull to Hero buttons and interactive elements for a premium feel.
+   - **Ambient Background**: Added floating, animated glassmorphic blobs that react to theme colors.
+   - **Glassmorphism 2.0**: Added dynamic hover glows and lift effects to all glass cards.
+   - **Scroll Reveal**: Implemented intersection-based reveal animations for a smoother entry.
+4. **Performance & SEO**:
+   - Verified `loading="lazy"` on all images.
+   - Checked ARIA labels for accessibility compliance.
+5. **Contact Form**:
+   - Verified EmailJS integration and updated Template parameters.
+6. **Deployment Ready**:
+   - Verified `package.json` homepage and `vite.config.js` base path for GitHub Pages.

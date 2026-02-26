@@ -1,0 +1,113 @@
+.contact-card-container {
+    position: relative;
+    z-index: 1;
+}
+
+.cat-container {
+    position: absolute;
+    top: -60px;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.cat {
+    position: relative;
+    width: 60px;
+    height: 50px;
+}
+
+/* Cat Head with CSS */
+.cat-head {
+    width: 50px;
+    height: 40px;
+    background: #444;
+    /* Dark grey cat */
+    border-radius: 40% 40% 30% 30%;
+    position: relative;
+}
+
+.cat-ear {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid #444;
+    position: absolute;
+    top: -10px;
+}
+
+.cat-ear.left {
+    left: 5px;
+    transform: rotate(-15deg);
+}
+
+.cat-ear.right {
+    right: 5px;
+    transform: rotate(15deg);
+}
+
+.cat-eye {
+    width: 6px;
+    height: 8px;
+    background: #ffd700;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+}
+
+.cat-eye.left {
+    left: 12px;
+}
+
+.cat-eye.right {
+    right: 12px;
+}
+
+.cat-eye::after {
+    content: '';
+    width: 2px;
+    height: 4px;
+    background: black;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+}
+
+.cat-nose {
+    width: 4px;
+    height: 3px;
+    background: pink;
+    border-radius: 50%;
+    position: absolute;
+    top: 25px;
+    left: 23px;
+}
+
+.speech-bubble {
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    background: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #333;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    white-space: nowrap;
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 10px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid white;
+}

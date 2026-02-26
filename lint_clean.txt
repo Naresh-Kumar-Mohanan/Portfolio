@@ -1,0 +1,14 @@
+
+> temp_app@0.0.0 lint
+> eslint .
+
+
+D:\GitHub\My-Portfolio\Dump\Backup_2026-02-24\src\components\Contact.jsx
+  18:26   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  18:123  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\GitHub\My-Portfolio\Dump\Backup_2026-02-24\src\components\Hero.jsx
+  24:29  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+??? 3 problems (3 errors, 0 warnings)
+

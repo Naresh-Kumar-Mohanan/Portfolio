@@ -12,7 +12,7 @@ const Experience = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
             >
-                <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', marginBottom: '20px', borderBottom: '1px solid var(--glass-border)', paddingBottom: '20px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', marginBottom: '20px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '20px' }}>
                     <div>
                         <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--text-color)' }}>ZINNOV MANAGEMENT CONSULTING PRIVATE LIMITED</h3>
                         <h4 style={{ fontSize: '1.2rem', color: 'var(--primary-color)', marginTop: '5px' }}>Associate Research Executive</h4>

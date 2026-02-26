@@ -1,0 +1,107 @@
+.project-marquee-wrapper {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+    padding: 60px 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.project-marquee-inner {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+.project-marquee-inner:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 20px));
+    }
+}
+
+.projects-container {
+    perspective: 1000px;
+    height: 380px;
+    width: 350px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.projects-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.projects-container:hover .projects-card-inner {
+    transform: rotateY(180deg);
+}
+
+.projects-card-front,
+.projects-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.projects-card-back {
+    transform: rotateY(180deg);
+    background: var(--glass-bg);
+    justify-content: center;
+    align-items: center;
+}
+
+.project-link-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: var(--accent-gradient);
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+}
+
+.project-link-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+}
+
+.coming-soon-badge {
+    padding: 8px 20px;
+    border: 1px dashed var(--text-secondary);
+    color: var(--text-secondary);
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+    .projects-container {
+        width: 280px;
+        height: 320px;
+    }
+}

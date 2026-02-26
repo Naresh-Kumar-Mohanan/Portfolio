@@ -1,0 +1,44 @@
+# Portfolio Deployment Steps - GitHub Pages 🚀
+
+Follow these steps to host your portfolio on GitHub:
+
+### 1️⃣ Push Latest Changes to GitHub
+Since your project is already on GitHub, ensure your latest local changes are pushed to your `main` branch:
+1. Open your terminal in the project folder and run:
+   ```bash
+   git add .
+   git commit -m "Final polish - Ready for live"
+   git push origin main
+   ```
+
+### 2️⃣ Configuration Verification
+I have already pre-configured these for you, but it's good to know:
+*   **package.json**: Contains `"homepage": "https://Naresh-Kumar-Mohanan.github.io/My-Portfolio"` and deployment scripts.
+*   **vite.config.js**: Contains `base: "/My-Portfolio/"` to ensure assets (images/CSS) load correctly.
+
+### 3️⃣ Deployment Command
+Simply run this single command in your terminal:
+```bash
+npm run deploy
+```
+*   **What this does**: It automatically builds your project (`npm run build`) and pushes the `dist` folder to a special branch called `gh-pages` on your GitHub.
+
+### 4️⃣ Activate GitHub Pages
+1. Go to your repository on GitHub: `https://github.com/Naresh-Kumar-Mohanan/My-Portfolio`
+2. Click on **Settings** (top tab).
+3. Click on **Pages** (left sidebar).
+4. Under **Build and deployment > Branch**:
+   - Ensure **Branch** is set to `gh-pages`.
+   - Ensure the folder is set to `/(root)`.
+   - Click **Save** if you made changes.
+
+### 5️⃣ View Your Site
+After a minute or two, your site will be live at:
+🔗 **https://Naresh-Kumar-Mohanan.github.io/My-Portfolio/**
+
+---
+
+### 💡 How to update your site in the future?
+Whenever you make changes to your code:
+1. Run `git add .`, `git commit -m "Update message"`, and `git push` to save your code.
+2. Run `npm run deploy` to update the live website. Done! ✨

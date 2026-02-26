@@ -13,7 +13,7 @@
     height: 500px;
     background: var(--primary-color);
     filter: blur(150px);
-    opacity: var(--glow-opacity);
+    opacity: 0.2;
     border-radius: 50%;
     top: -100px;
     right: -100px;
@@ -26,7 +26,7 @@
     height: 400px;
     background: var(--secondary-color);
     filter: blur(150px);
-    opacity: calc(var(--glow-opacity) * 0.75);
+    opacity: 0.15;
     border-radius: 50%;
     bottom: -50px;
     left: -100px;
@@ -49,7 +49,7 @@
     font-weight: 900;
     line-height: 1.1;
     margin-bottom: 20px;
-    background: var(--header-gradient);
+    background: linear-gradient(to right, #fff, #b0b0b0);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -98,97 +98,5 @@
 
     .hero-desc {
         margin: 0 auto 40px;
-    }
-}
-
-.hero-img-container {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-img-frame {
-    width: 350px;
-    height: 350px;
-    overflow: hidden;
-    z-index: 2;
-    box-shadow: 0 0 50px rgba(0, 242, 255, 0.3);
-    border: 4px solid var(--glass-border);
-}
-
-
-
-.hero-img-outline {
-    position: absolute;
-    width: 380px;
-    height: 380px;
-    border: 2px solid var(--primary-color);
-    border-radius: 50%;
-    opacity: 0.3;
-    animation: rotate 15s linear infinite;
-    z-index: 1;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-img-container {
-        width: 300px;
-        height: 300px;
-    }
-
-    .hero-img-frame {
-        width: 250px;
-        height: 250px;
-    }
-
-    .hero-img-outline {
-        width: 270px;
-        height: 270px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-img-container {
-        width: 250px;
-        height: 250px;
-    }
-
-    .hero-img-frame {
-        width: 200px;
-        height: 200px;
-    }
-
-    .hero-img-outline {
-        width: 220px;
-        height: 220px;
-    }
-
-    .hero-name {
-        font-size: 2.8rem;
-    }
-
-    .hero-role {
-        font-size: 1.3rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
     }
 }
