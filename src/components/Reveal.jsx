@@ -30,8 +30,8 @@ const Reveal = ({ children, width = "fit-content" }) => {
             </motion.div>
             <motion.div
                 variants={{
-                    hidden: { left: 0 },
-                    visible: { left: "100%" }
+                    hidden: { x: 0 },
+                    visible: { x: "100%" }
                 }}
                 initial="hidden"
                 animate={slideControls}
