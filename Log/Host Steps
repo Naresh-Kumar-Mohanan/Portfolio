@@ -13,8 +13,8 @@ Since your project is already on GitHub, ensure your latest local changes are pu
 
 ### 2️⃣ Configuration Verification
 I have already pre-configured these for you, but it's good to know:
-*   **package.json**: Contains `"homepage": "https://Naresh-Kumar-Mohanan.github.io/Portfolio"` and deployment scripts.
-*   **vite.config.js**: Contains `base: "/Portfolio/"` to ensure assets (images/CSS) load correctly.
+*   **package.json**: Contains `"homepage": "https://Naresh-Kumar-Mohanan.github.io/My-Portfolio"` and deployment scripts.
+*   **vite.config.js**: Contains `base: "/My-Portfolio/"` to ensure assets (images/CSS) load correctly.
 
 ### 3️⃣ Deployment Command
 Simply run this single command in your terminal:
@@ -24,7 +24,7 @@ npm run deploy
 *   **What this does**: It automatically builds your project (`npm run build`) and pushes the `dist` folder to a special branch called `gh-pages` on your GitHub.
 
 ### 4️⃣ Activate GitHub Pages
-1. Go to your repository on GitHub: `https://github.com/Naresh-Kumar-Mohanan/Portfolio`
+1. Go to your repository on GitHub: `https://github.com/Naresh-Kumar-Mohanan/My-Portfolio`
 2. Click on **Settings** (top tab).
 3. Click on **Pages** (left sidebar).
 4. Under **Build and deployment > Branch**:
@@ -34,7 +34,7 @@ npm run deploy
 
 ### 5️⃣ View Your Site
 After a minute or two, your site will be live at:
-🔗 **https://Naresh-Kumar-Mohanan.github.io/Portfolio/**
+🔗 **https://Naresh-Kumar-Mohanan.github.io/My-Portfolio/**
 
 ---
 
