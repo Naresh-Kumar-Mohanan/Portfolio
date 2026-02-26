@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Naresh-Kumar-Mohanan.github.io/My-Portfolio",
+  "homepage": "https://Naresh-Kumar-Mohanan.github.io/Portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
