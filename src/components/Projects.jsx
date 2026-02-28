@@ -1,5 +1,6 @@
-import React from 'react';
-import { FaExternalLinkAlt, FaTools } from 'react-icons/fa';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { FaExternalLinkAlt, FaTools, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import './Projects.css';
 
 const Projects = () => {
@@ -54,8 +55,37 @@ const Projects = () => {
         }
     ];
 
-    // Double the array for seamless marquee
-    const marqueeProjects = [...projects, ...projects];
+    const scrollRef = useRef(null);
+    const [scrollProgress, setScrollProgress] = useState(0);
+    const [canScrollLeft, setCanScrollLeft] = useState(false);
+    const [canScrollRight, setCanScrollRight] = useState(true);
+
+    const handleScroll = () => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const scrollLeft = el.scrollLeft;
+        const maxScroll = el.scrollWidth - el.clientWidth;
+        const progress = maxScroll > 0 ? (scrollLeft / maxScroll) * 100 : 0;
+        setScrollProgress(progress);
+        setCanScrollLeft(scrollLeft > 10);
+        setCanScrollRight(scrollLeft < maxScroll - 10);
+    };
+
+    useEffect(() => {
+        const el = scrollRef.current;
+        if (el) {
+            el.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initial check
+            return () => el.removeEventListener('scroll', handleScroll);
+        }
+    }, []);
+
+    const scrollBy = (direction) => {
+        const el = scrollRef.current;
+        if (el) {
+            el.scrollBy({ left: direction * 400, behavior: 'smooth' });
+        }
+    };
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -80,10 +110,28 @@ const Projects = () => {
     };
 
     return (
-        <section id="projects" className="container" style={{ padding: '100px 0', overflowX: 'hidden' }}>
-            <h2 className="section-title">Projects</h2>
+        <section id="projects" className="container" style={{ padding: '100px 0' }}>
+            <div className="projects-header">
+                <h2 className="section-title">Projects</h2>
+                <div className="scroll-controls">
+                    <button
+                        className={`scroll-arrow ${!canScrollLeft ? 'disabled' : ''}`}
+                        onClick={() => scrollBy(-1)}
+                        aria-label="Scroll left"
+                    >
+                        <FaChevronLeft />
+                    </button>
+                    <button
+                        className={`scroll-arrow ${!canScrollRight ? 'disabled' : ''}`}
+                        onClick={() => scrollBy(1)}
+                        aria-label="Scroll right"
+                    >
+                        <FaChevronRight />
+                    </button>
+                </div>
+            </div>
 
-            <div className="project-marquee-wrapper">
+            <div className="project-marquee-wrapper" ref={scrollRef}>
                 <motion.div
                     className="project-marquee-inner"
                     variants={containerVariants}
@@ -91,45 +139,38 @@ const Projects = () => {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.1 }}
                 >
-                    {marqueeProjects.map((project, index) => (
+                    {projects.map((project, index) => (
                         <motion.div
                             key={index}
-                            className="project-card-container"
+                            className="project-card-v2 glass"
                             variants={itemVariants}
                         >
-                            <div className="project-card-inner">
-                                {/* Front Side */}
-                                <div className="project-card-front glass">
-                                    <div className="card-header">
-                                        <span className="project-category">{project.category}</span>
-                                        <h3 className="project-title">{project.title}</h3>
-                                    </div>
+                            <div className="project-main-content">
+                                <div className="card-top">
+                                    <span className="project-category-v2">{project.category}</span>
+                                    <h3 className="project-title-v2">{project.title}</h3>
+                                </div>
 
-                                    <p className="project-desc">{project.description}</p>
-
-                                    <div className="project-tech-stack">
+                                <div className="project-details-v2">
+                                    <p className="project-desc-v2">{project.description}</p>
+                                    <div className="project-tech-v2">
                                         {project.tech.map((t, i) => (
-                                            <span key={i} className="tech-badge">{t}</span>
+                                            <span key={i} className="tech-tag-v2">{t}</span>
                                         ))}
                                     </div>
                                 </div>
+                            </div>
 
-                                {/* Back Side */}
-                                <div className="project-card-back glass">
-                                    <h3 className="flip-title">Project Details</h3>
-                                    <p className="flip-info">Explore more about this project</p>
-
+                            <div className="project-action-panel">
+                                <div className="action-wrapper">
+                                    <span className="project-status-text">{project.status}</span>
                                     {project.link ? (
-                                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link-btn">
-                                            <FaExternalLinkAlt /> View Live Site
+                                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-action-btn">
+                                            <FaExternalLinkAlt /> Open Project
                                         </a>
                                     ) : (
-                                        <div className="coming-soon-badge">
-                                            {project.status === 'Coming Soon...' ? (
-                                                <><FaTools style={{ marginRight: '8px' }} /> Development In Progress</>
-                                            ) : (
-                                                <>{project.status}</>
-                                            )}
+                                        <div className="project-action-placeholder">
+                                            <FaTools /> Coming Soon
                                         </div>
                                     )}
                                 </div>
@@ -137,6 +178,14 @@ const Projects = () => {
                         </motion.div>
                     ))}
                 </motion.div>
+            </div>
+
+            {/* Scroll Progress Bar */}
+            <div className="scroll-progress-track">
+                <div
+                    className="scroll-progress-fill"
+                    style={{ width: `${scrollProgress}%` }}
+                ></div>
             </div>
         </section>
     );

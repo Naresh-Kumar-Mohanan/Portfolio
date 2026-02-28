@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 
@@ -12,7 +12,17 @@ import Contact from './components/Contact';
 import FloatingResume from './components/FloatingResume';
 
 function App() {
+  useEffect(() => {
+    // Add a slight delay to ensure everything is rendered
+    const timer = setTimeout(() => {
+      document.body.classList.add('loaded');
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+
   return (
+
     <div className="App" style={{ position: 'relative', overflow: 'hidden' }}>
       {/* Background Decorative Blobs */}
       <div className="bg-blobs">
