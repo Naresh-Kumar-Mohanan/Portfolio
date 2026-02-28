@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaExternalLinkAlt, FaTools } from 'react-icons/fa';
+import React, { useRef } from 'react';
+import { FaExternalLinkAlt, FaTools, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import './Projects.css';
 
 const Projects = () => {
@@ -54,58 +54,57 @@ const Projects = () => {
         }
     ];
 
-    // Duplicate projects for seamless marquee
-    const marqueeProjects = [...projects, ...projects];
+    const scrollRef = useRef(null);
+
+    const scroll = (direction) => {
+        const { current } = scrollRef;
+        if (current) {
+            const scrollAmount = 400;
+            current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    };
 
     return (
-        <section id="projects" className="container" style={{ padding: '100px 0', maxWidth: '100vw', overflowX: 'hidden' }}>
+        <section id="projects" className="container" style={{ padding: '100px 0', position: 'relative' }}>
             <h2 className="section-title">Projects</h2>
 
-            <div className="project-marquee-wrapper">
-                <div className="project-marquee-inner">
-                    {marqueeProjects.map((project, index) => (
-                        <div
-                            key={index}
-                            className="projects-container"
-                        >
-                            <div className="projects-card-inner">
+            <div className="projects-scroll-wrapper">
+                <button
+                    className="scroll-btn left"
+                    onClick={() => scroll('left')}
+                    aria-label="Scroll Left"
+                >
+                    <FaChevronLeft />
+                </button>
+
+                <div className="projects-scroll-container" ref={scrollRef}>
+                    {projects.map((project, index) => (
+                        <div key={index} className="project-card-container">
+                            <div className="project-card-inner">
                                 {/* Front Side */}
-                                <div className="projects-card-front glass">
-                                    <span style={{
-                                        fontSize: '0.8rem',
-                                        color: 'var(--primary-color)',
-                                        textTransform: 'uppercase',
-                                        letterSpacing: '1px',
-                                        fontWeight: '600'
-                                    }}>
-                                        {project.category}
-                                    </span>
+                                <div className="project-card-front glass">
+                                    <div className="card-header">
+                                        <span className="project-category">{project.category}</span>
+                                        <h3 className="project-title">{project.title}</h3>
+                                    </div>
 
-                                    <h3 style={{ fontSize: '1.5rem', margin: '15px 0', fontWeight: '700' }}>{project.title}</h3>
+                                    <p className="project-desc">{project.description}</p>
 
-                                    <p style={{ color: 'var(--text-secondary)', marginBottom: '25px', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                                        {project.description}
-                                    </p>
-
-                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: 'auto' }}>
+                                    <div className="project-tech-stack">
                                         {project.tech.map((t, i) => (
-                                            <span key={i} style={{
-                                                background: 'var(--glass-bg)',
-                                                padding: '4px 10px',
-                                                borderRadius: '20px',
-                                                fontSize: '0.75rem',
-                                                color: 'var(--text-color)',
-                                                border: '1px solid var(--glass-border)'
-                                            }}>
-                                                {t}
-                                            </span>
+                                            <span key={i} className="tech-badge">{t}</span>
                                         ))}
                                     </div>
                                 </div>
 
                                 {/* Back Side */}
-                                <div className="projects-card-back glass">
-                                    <h3 style={{ marginBottom: '20px' }}>Explore Project</h3>
+                                <div className="project-card-back glass">
+                                    <h3 className="flip-title">Project Details</h3>
+                                    <p className="flip-info">Explore more about this project</p>
+
                                     {project.link ? (
                                         <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link-btn">
                                             <FaExternalLinkAlt /> View Live Site
@@ -113,7 +112,7 @@ const Projects = () => {
                                     ) : (
                                         <div className="coming-soon-badge">
                                             {project.status === 'Coming Soon...' ? (
-                                                <><FaTools style={{ marginRight: '8px' }} /> Development in Progress</>
+                                                <><FaTools style={{ marginRight: '8px' }} /> Development In Progress</>
                                             ) : (
                                                 <>{project.status}</>
                                             )}
@@ -124,6 +123,14 @@ const Projects = () => {
                         </div>
                     ))}
                 </div>
+
+                <button
+                    className="scroll-btn right"
+                    onClick={() => scroll('right')}
+                    aria-label="Scroll Right"
+                >
+                    <FaChevronRight />
+                </button>
             </div>
         </section>
     );
