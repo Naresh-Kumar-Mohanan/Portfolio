@@ -22,7 +22,7 @@ const FloatingResume = () => {
                     transition={{ type: 'spring', stiffness: 260, damping: 20 }}
                     aria-label="View Resume"
                 >
-                    <span className="nk-logo-text">NK</span>
+                    <span className="nk-logo-text">CV</span>
                 </motion.button>
             </div>
 
