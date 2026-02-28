@@ -1,10 +1,13 @@
-# Bug Log - 2026-02-26
+# Bug Log - 2026-02-28
 
 ## Resolved Bugs
 1. **ESLint JSX Detection Issue**:
-   - **Status**: Fixed ✅
-   - **Resolution**: Installed `eslint-plugin-react`, updated `eslint.config.js` with correct plugins and rules, and added `Dump` directory to `globalIgnores`. 
-   - **Verification**: `npm run lint` now passes successfully.
+   - **Status**: Fixed ✅ (2026-02-26)
+   - **Resolution**: Installed `eslint-plugin-react`, updated `eslint.config.js`, and added `Dump` to ignore.
+2. **Meta Tag URL Inconsistency**:
+   - **Status**: Fixed ✅ (2026-02-28)
+   - **Issue**: Meta tags in `index.html` were still pointing to the old repository name `My-Portfolio`.
+   - **Resolution**: Updated `og:url`, `og:image`, `twitter:url`, and `twitter:image` to reference the correct repository `Portfolio`.
 
 ## Open Bugs
-- None identified currently.
+- None identified currently. Project is stable.

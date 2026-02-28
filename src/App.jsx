@@ -9,6 +9,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Reviews from './components/Reviews';
 import Contact from './components/Contact';
+import FloatingResume from './components/FloatingResume';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
       <Skills />
       <Reviews />
       <Contact />
+      <FloatingResume />
 
       <footer style={{ textAlign: 'center', padding: '20px', color: 'var(--text-secondary)', borderTop: '1px solid var(--glass-border)' }}>
         <p>&copy; {new Date().getFullYear()} NareshKumar M. All rights reserved.</p>
