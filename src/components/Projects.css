@@ -71,10 +71,13 @@
     overflow-x: auto;
     overflow-y: hidden;
     padding: 60px 0;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     scrollbar-width: none;
     -ms-overflow-style: none;
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scroll on iOS */
 }
 
 .project-marquee-wrapper::-webkit-scrollbar {
@@ -255,13 +258,56 @@
     font-style: italic;
 }
 
+/* Tablet */
+@media (max-width: 768px) {
+    .projects-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .project-marquee-inner {
+        padding: 0 5vw;
+        gap: 25px;
+    }
+
+    .project-card-v2 {
+        width: 320px;
+        height: 400px;
+    }
+
+    .scroll-progress-track {
+        max-width: 200px;
+    }
+}
+
+/* Mobile */
 @media (max-width: 480px) {
     .project-card-v2 {
-        width: 300px;
+        width: 280px;
         height: 380px;
     }
 
     .project-title-v2 {
         font-size: 1.4rem;
+    }
+
+    .project-main-content {
+        padding: 25px;
+    }
+
+    .project-marquee-inner {
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .scroll-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 0.85rem;
+    }
+
+    .scroll-progress-track {
+        max-width: 150px;
     }
 }
