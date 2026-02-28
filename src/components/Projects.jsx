@@ -67,6 +67,28 @@ const Projects = () => {
         }
     };
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { y: 30, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.5,
+                ease: 'easeOut'
+            }
+        }
+    };
+
     return (
         <section id="projects" className="container" style={{ padding: '100px 0', position: 'relative' }}>
             <h2 className="section-title">Projects</h2>
@@ -80,9 +102,20 @@ const Projects = () => {
                     <FaChevronLeft />
                 </button>
 
-                <div className="projects-scroll-container" ref={scrollRef}>
+                <motion.div
+                    className="projects-scroll-container"
+                    ref={scrollRef}
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                >
                     {projects.map((project, index) => (
-                        <div key={index} className="project-card-container">
+                        <motion.div
+                            key={index}
+                            className="project-card-container"
+                            variants={itemVariants}
+                        >
                             <div className="project-card-inner">
                                 {/* Front Side */}
                                 <div className="project-card-front glass">
@@ -120,9 +153,9 @@ const Projects = () => {
                                     )}
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
                 <button
                     className="scroll-btn right"
