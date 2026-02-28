@@ -1,28 +1,34 @@
-.projects-scroll-wrapper {
+.project-marquee-wrapper {
+    width: 100vw;
     position: relative;
-    display: flex;
-    align-items: center;
-    width: calc(100% + 40px);
-    margin-left: -20px;
-    padding: 20px 0;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+    padding: 60px 0;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
-.projects-scroll-container {
+.project-marquee-inner {
     display: flex;
-    gap: 30px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 30px 20px;
-    width: 100%;
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE/Edge */
+    gap: 40px;
+    width: max-content;
+    animation: projects-scroll 60s linear infinite;
 }
 
-.projects-scroll-container::-webkit-scrollbar {
-    display: none;
-    /* Chrome/Safari */
+.project-marquee-inner:hover {
+    animation-play-state: paused;
+}
+
+@keyframes projects-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 20px));
+    }
 }
 
 .project-card-container {
@@ -151,47 +157,6 @@
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 600;
-}
-
-/* Scroll Buttons */
-.scroll-btn {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--surface-color);
-    border: 1px solid var(--glass-border);
-    color: var(--text-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.scroll-btn:hover {
-    background: var(--glass-bg);
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-    transform: scale(1.1);
-}
-
-.scroll-btn.left {
-    left: 0;
-}
-
-.scroll-btn.right {
-    right: 0;
-}
-
-@media (max-width: 1024px) {
-    .scroll-btn {
-        display: none;
-        /* Hide buttons on mobile/tablet, use touch scroll */
-    }
 }
 
 @media (max-width: 480px) {

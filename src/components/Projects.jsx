@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { FaExternalLinkAlt, FaTools, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import React from 'react';
+import { FaExternalLinkAlt, FaTools } from 'react-icons/fa';
 import './Projects.css';
 
 const Projects = () => {
@@ -54,18 +54,8 @@ const Projects = () => {
         }
     ];
 
-    const scrollRef = useRef(null);
-
-    const scroll = (direction) => {
-        const { current } = scrollRef;
-        if (current) {
-            const scrollAmount = 400;
-            current.scrollBy({
-                left: direction === 'left' ? -scrollAmount : scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-    };
+    // Double the array for seamless marquee
+    const marqueeProjects = [...projects, ...projects];
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -90,27 +80,18 @@ const Projects = () => {
     };
 
     return (
-        <section id="projects" className="container" style={{ padding: '100px 0', position: 'relative' }}>
+        <section id="projects" className="container" style={{ padding: '100px 0', overflowX: 'hidden' }}>
             <h2 className="section-title">Projects</h2>
 
-            <div className="projects-scroll-wrapper">
-                <button
-                    className="scroll-btn left"
-                    onClick={() => scroll('left')}
-                    aria-label="Scroll Left"
-                >
-                    <FaChevronLeft />
-                </button>
-
+            <div className="project-marquee-wrapper">
                 <motion.div
-                    className="projects-scroll-container"
-                    ref={scrollRef}
+                    className="project-marquee-inner"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.1 }}
                 >
-                    {projects.map((project, index) => (
+                    {marqueeProjects.map((project, index) => (
                         <motion.div
                             key={index}
                             className="project-card-container"
@@ -156,14 +137,6 @@ const Projects = () => {
                         </motion.div>
                     ))}
                 </motion.div>
-
-                <button
-                    className="scroll-btn right"
-                    onClick={() => scroll('right')}
-                    aria-label="Scroll Right"
-                >
-                    <FaChevronRight />
-                </button>
             </div>
         </section>
     );
