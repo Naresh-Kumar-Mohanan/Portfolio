@@ -45,10 +45,58 @@
     :root[data-theme='light'] body {
       background-color: #fcfcfd;
     }
+
+    /* Preloader Styles */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #050505;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    :root[data-theme='light'] #preloader {
+      background-color: #fcfcfd;
+    }
+
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 5px solid var(--primary-color, #00f2ff);
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loaded #preloader {
+      opacity: 0;
+      visibility: hidden;
+    }
   </style>
 </head>
 
 <body>
+  <div id="preloader">
+    <span class="loader"></span>
+  </div>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>

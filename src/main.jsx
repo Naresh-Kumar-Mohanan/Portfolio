@@ -8,3 +8,8 @@ createRoot(document.getElementById('root')).render(
     <App />
   </StrictMode>,
 )
+
+// Remove preloader
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
+});
