@@ -7,6 +7,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import Certifications from './components/Certifications';
 import Reviews from './components/Reviews';
 import Contact from './components/Contact';
 import FloatingResume from './components/FloatingResume';
@@ -52,6 +53,7 @@ function App() {
       <Experience />
       <Projects />
       <Skills />
+      <Certifications />
       <Reviews />
       <Contact />
       <FloatingResume />

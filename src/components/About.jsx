@@ -52,8 +52,8 @@ const About = () => {
                     </motion.div>
                 </div>
 
-                <div>
-                    <h3 style={{ fontSize: '2rem', marginBottom: '30px', color: 'var(--text-color)' }}>Education</h3>
+                <div style={{ marginTop: '50px' }}>
+                    <h3 className="section-title" style={{ fontSize: '2.5rem', marginBottom: '40px' }}>Education</h3>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
 
                         <motion.div

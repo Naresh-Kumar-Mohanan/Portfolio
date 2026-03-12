@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaJava, FaReact, FaHtml5, FaCss3Alt, FaJs, FaPython, FaGitAlt } from 'react-icons/fa';
-import { SiSpringboot, SiHibernate, SiMysql, SiMongodb, SiPostman } from 'react-icons/si';
+import { SiSpringboot, SiHibernate, SiMysql, SiMongodb, SiPostman, SiFigma, SiMarvelapp, SiCanva, SiAdobephotoshop, SiAdobepremierepro, SiDavinciresolve, SiUnity, SiBlender, SiUnrealengine } from 'react-icons/si';
 import './Skills.css';
 
 const Skills = () => {
@@ -18,6 +18,15 @@ const Skills = () => {
         { name: 'Git', icon: <FaGitAlt />, color: '#f05032', rating: 80 },
         { name: 'Postman', icon: <SiPostman />, color: '#ff6c37', rating: 85 },
         { name: 'Hibernate', icon: <SiHibernate />, color: '#59666c', rating: 82 },
+        { name: 'Figma', icon: <SiFigma />, color: '#F24E1E', rating: 40 },
+        { name: 'Marvel', icon: <SiMarvelapp />, color: '#EF3340', rating: 40 },
+        { name: 'Affinity', icon: <SiCanva />, color: '#00C4CC', rating: 40 },
+        { name: 'Photoshop', icon: <SiAdobephotoshop />, color: '#31A8FF', rating: 40 },
+        { name: 'Premiere Pro', icon: <SiAdobepremierepro />, color: '#9999FF', rating: 40 },
+        { name: 'DaVinci Resolve', icon: <SiDavinciresolve />, color: '#0070FF', rating: 40 },
+        { name: 'Unity', icon: <SiUnity />, color: '#000000', rating: 40 },
+        { name: 'Blender', icon: <SiBlender />, color: '#F5792A', rating: 40 },
+        { name: 'Unreal Engine 5', icon: <SiUnrealengine />, color: '#0E1128', rating: 40 },
     ];
 
     const containerVariants = {
@@ -43,7 +52,7 @@ const Skills = () => {
     };
 
     return (
-        <section id="skills" className="container" style={{ padding: '100px 20px', maxWidth: '1200px', margin: '0 auto' }}>
+        <section id="skills" className="container" style={{ padding: '100px 20px', maxWidth: '1400px', margin: '0 auto' }}>
             <h2 className="section-title">Skills</h2>
             <motion.div
                 className="skills-grid"
