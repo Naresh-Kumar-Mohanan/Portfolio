@@ -5,7 +5,7 @@ import './FloatingResume.css';
 
 const FloatingResume = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const resumeUrl = "/Portfolio/NareshKumar Resume.pdf"; // Use full path for GitHub Pages compatibility
+    const resumeUrl = "/Portfolio/Resume Naresh Kumar.pdf"; // Use full path for GitHub Pages compatibility
 
     const toggleModal = () => setIsOpen(!isOpen);
 
@@ -45,7 +45,7 @@ const FloatingResume = () => {
                             <div className="resume-modal-header">
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                     <FaFilePdf style={{ color: '#ff4444', fontSize: '1.5rem' }} />
-                                    <h3>NareshKumar_Resume.pdf</h3>
+                                    <h3>Resume_Naresh_Kumar.pdf</h3>
                                 </div>
                                 <button className="close-icon-btn" onClick={toggleModal} style={{ background: 'transparent', border: 'none', color: 'var(--text-color)', fontSize: '1.5rem', cursor: 'pointer' }}>
                                     <FaTimes />
@@ -70,7 +70,7 @@ const FloatingResume = () => {
                                 </button>
                                 <a
                                     href={resumeUrl}
-                                    download="NareshKumar_Resume.pdf"
+                                    download="Resume_Naresh_Kumar.pdf"
                                     className="download-resume-btn"
                                 >
                                     <FaDownload /> Download Resume

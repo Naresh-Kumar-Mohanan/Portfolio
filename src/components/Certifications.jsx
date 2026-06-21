@@ -12,24 +12,49 @@ const Certifications = () => {
 
     const certifications = [
         {
-            title: "UI UX",
-            issuer: "Great Learning",
+            title: "Fullstack Java Development",
+            issuer: "Qspiders Vadapalani, Chennai",
             date: "March 2026",
+            icon: <FaCertificate />,
+            file: null,
+            link: null
+        },
+        {
+            title: "UI / UX Designer",
+            issuer: "Great Learning Academy",
+            date: "December 2024",
             icon: <FaBezierCurve />,
             file: uiUXCert,
             link: "https://www.mygreatlearning.com/certificate/JXYXBSUC?referrer_code=GLNANBZTTOR-U"
         },
         {
-            title: "Intro to Graphic Design with Photoshop",
-            issuer: "Great Learning",
-            date: "August 2025",
+            title: "Graphic Design with Photoshop",
+            issuer: "Great Learning Academy",
+            date: "July 2024",
             icon: <FaPalette />,
             file: graphicDesignCert,
             link: "https://www.mygreatlearning.com/certificate/YSYSIRCA?referrer_code=GLNANBZTTOR-U"
+        },
+        {
+            title: "Tally 9",
+            issuer: "Apollo Computer Center",
+            date: "November 2017",
+            icon: <FaAward />,
+            file: null,
+            link: null
+        },
+        {
+            title: "Windows, MS Office, C, C++",
+            issuer: "Apollo Computer Education Ltd",
+            date: "May 2017",
+            icon: <FaAward />,
+            file: null,
+            link: null
         }
     ];
 
     const openModal = (cert) => {
+        if (!cert.file) return;
         setSelectedCert(cert);
         document.body.style.overflow = 'hidden';
     };
@@ -68,12 +93,21 @@ const Certifications = () => {
                         <h3 className="cert-title">{cert.title}</h3>
                         <p className="cert-issuer">{cert.issuer}</p>
                         <div className="cert-actions">
-                            <button className="cert-link btn-view" onClick={() => openModal(cert)}>
-                                View Document <FaExternalLinkAlt size={12} />
-                            </button>
-                            <a href={cert.link} className="cert-link" target="_blank" rel="noopener noreferrer">
-                                Verify Online
-                            </a>
+                            {cert.file ? (
+                                <button className="cert-link btn-view" onClick={() => openModal(cert)}>
+                                    View Document <FaExternalLinkAlt size={12} />
+                                </button>
+                            ) : null}
+                            {cert.link ? (
+                                <a href={cert.link} className="cert-link" target="_blank" rel="noopener noreferrer">
+                                    Verify Online
+                                </a>
+                            ) : null}
+                            {!cert.file && !cert.link ? (
+                                <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontStyle: 'italic', padding: '6px 0' }}>
+                                    Completed Certificate
+                                </span>
+                            ) : null}
                         </div>
                     </motion.div>
                 ))}

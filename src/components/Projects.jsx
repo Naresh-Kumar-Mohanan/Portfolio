@@ -8,50 +8,56 @@ const Projects = () => {
         {
             title: 'Organization Management System',
             category: 'Full Stack Web App',
-            description: 'A comprehensive system to manage employees, departments, and tasks. Built with Java Spring Boot, React, and MySQL.',
+            description: 'Developed a web application to manage employees, departments, projects, and organizational operations. Built with Java Spring Boot, React, and MySQL.',
             tech: ['Java', 'Spring Boot', 'React', 'MySQL'],
             link: null,
-            status: 'Coming Soon...'
+            status: 'Coming Soon...',
+            date: 'OCT - 2025'
         },
         {
-            title: 'Mini E-commerce Web App',
-            category: 'Frontend',
-            description: 'A responsive e-commerce interface allowing users to browse products, add to cart, and manage orders.',
-            tech: ['HTML', 'CSS', 'JavaScript'],
-            link: 'https://shopbynk.netlify.app/',
-            status: 'Live Demo'
+            title: 'Food Ordering Web Application',
+            category: 'Full Stack Web App',
+            description: 'Built an online food ordering platform with menu browsing and order management features. Built with Java Spring Boot, React, and MySQL.',
+            tech: ['Java', 'Spring Boot', 'React', 'MySQL'],
+            link: null,
+            status: 'Coming Soon...',
+            date: '2025'
         },
         {
-            title: 'Todo List Application',
-            category: 'Web Applications',
-            description: 'Advanced task management application features a clean UI and persistent data handling.',
+            title: 'School Management Website',
+            category: 'Frontend Web App',
+            description: 'Created a responsive website to display school information, courses, and announcements using React JS.',
+            tech: ['React', 'JavaScript', 'HTML', 'CSS'],
+            link: null,
+            status: 'Coming Soon...',
+            date: '2025'
+        },
+        {
+            title: 'Web Scraping Tool Content Extraction Application',
+            category: 'Utility Application',
+            description: 'Developed a tool to extract and organize content from websites automatically.',
             tech: ['JavaScript', 'HTML', 'CSS'],
-            link: 'https://todobynk.netlify.app/',
-            status: 'Live Demo'
+            link: null,
+            status: 'Coming Soon...',
+            date: '2025'
         },
         {
-            title: 'Interactive Calculator',
-            category: 'Web Applications',
-            description: 'A powerful calculator application with complex arithmetic capabilities and a sleek design.',
-            tech: ['JavaScript', 'CSS', 'HTML'],
-            link: 'https://calcbynk.netlify.app/',
-            status: 'Live Demo'
-        },
-        {
-            title: 'GPS Based Tracking System',
+            title: 'GPS Based Tracking and Notification System',
             category: 'IoT / Physical Project',
-            description: 'Mobile notification system for protecting wildlife animals using GPS tracking hardware.',
+            description: 'Built an IoT-based system to track wildlife animals and send location alerts through mobile notifications.',
             tech: ['IoT', 'Embedded Systems', 'GSM'],
             link: null,
-            status: 'Physical Project'
+            status: 'Physical Project',
+            date: '2023'
         },
         {
-            title: 'Railway Monitoring System',
+            title: 'Railway Track Monitoring System',
             category: 'Embedded Systems',
-            description: 'Wireless monitoring and safety system for railway tracks using Zigbee technology.',
+            description: 'Developed a Zigbee-based monitoring system to detect and report railway track conditions.',
             tech: ['Zigbee', 'Sensors', 'Microcontroller'],
             link: null,
-            status: 'Physical Project'
+            status: 'Physical Project',
+            date: '2020'
         }
     ];
 
@@ -147,7 +153,10 @@ const Projects = () => {
                         >
                             <div className="project-main-content">
                                 <div className="card-top">
-                                    <span className="project-category-v2">{project.category}</span>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                                        <span className="project-category-v2">{project.category}</span>
+                                        {project.date && <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: '500' }}>{project.date}</span>}
+                                    </div>
                                     <h3 className="project-title-v2">{project.title}</h3>
                                 </div>
 
